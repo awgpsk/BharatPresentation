@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <script type="text/javascript" src="http://apidata.awgp.org/lib/js/1.0.6/devl/env-1.0.6.js"></script>
+        <script type="text/javascript" src="http://apidata.awgp.org/lib/js/1.0.6/devl/lib-1.0.6.js"></script>
+        <script type="text/javascript" src="http://apidata.awgp.org/lib/js/1.0.6/devl/uiobject-1.0.6.js"></script>
+        <script type="text/javascript" src="http://apidata.awgp.org/lib/js/1.0.6/devl/uiDoc.1.6.js"></script>
+        
+        <script type="text/javascript" src="http://devl.awgp.in/bharat/js/jquery.minicolors.js"></script>
+        
+        
+        <script type="text/javascript" src="preset.js"></script>
+        
+        <script type="text/javascript" src="uitab.js"></script>
+        <script type="text/javascript" src="document.js"></script>
+        <script type="text/javascript" src="player.js"></script>
+        <script type="text/javascript" src="uiWidget.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Alegreya+Sans:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i" />
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" />
+        <link rel="stylesheet" type="text/css" href="http://devl.awgp.in/bharat/js/jquery.minicolors.css" />
+        <link rel="stylesheet" type="text/css" href="http://devl.awgp.in/bharat/css/animation.css" />
+        
+        
+        <style>
+            *{
+                font-size: 11px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            .selectedSlide{
+                box-shadow: 0px 0px 3px 1px rgba(255,200,0,1);
+            }
+        </style>
+    </head>
+    <body style="padding: 0px; margin:0px;">
+        <div id="base" style="width:60%; height:80%; margin:80px auto;"></div>
+        <script type="text/javascript">
+            $( document ).ready(function() 
+            {
+                var base = new UIObject("#base");
+                player = new BharatPlayer(base);
+
+                //player.loadDocument(window.opener.editor.getJson());
+                //player.showControl=false;
+                //player.showDots=false;
+                player.loop=false;
+                player.slideClick=false;
+                player.onComplite=function()
+                {
+                    //var j = player.document.value();
+                    //alert(JSON.stringify(j));
+                }
+                player.loadDocument({"version":1,"name":"","property":{},"pages":[{"property":{"type":""},"style":{"backgroundColor":"rgba(12, 97, 153, 1)"},"widget":[{"tag":"div","presetName":"titleText","property":{"innerHTML":"Title Text","className":"","animationClass":"moveUpFadeIn"},"attribute":{"contenteditable":"true","rel":"none"},"style":{"fontFamily":"Alegreya Sans","fontWeight":"100","fontSize":"52","color":"rgba(247, 250, 252, 1)","borderStyle":"solid","borderColor":"rgba(252, 250, 249, 1)","borderBottomWidth":"1","borderTopWidth":"0","borderLeftWidth":"0","borderRightWidth":"0","paddingTop":"20","paddingBottom":"20","paddingLeft":"20","paddingRight":"20","textAlign":"center","marginTop":"0","marginBottom":"0","marginLeft":"0","marginRight":"0"},"event":{},"value":"Description Text","content":{"name":"div","widgetController":{"list":[{"innerHTML":"Bharat Presentation"}]}}},{"tag":"div","presetName":"simpleText","property":{"innerHTML":"Description text","className":"","animationClass":"moveUpFadeIn"},"attribute":{"contenteditable":"true","rel":"none"},"style":{"fontFamily":"Alegreya Sans","fontWeight":"100","fontSize":"24","color":"rgba(250, 245, 245, 1)","paddingTop":"20","paddingBottom":"20","paddingLeft":"20","paddingRight":"20","textAlign":"left","borderBottomWidth":"0","borderTopWidth":"0","borderLeftWidth":"0","borderRightWidth":"0","marginTop":"0","marginBottom":"0","marginLeft":"0","marginRight":"0"},"event":{},"value":"<br>","content":{"name":"div","widgetController":{"list":[{"innerHTML":"<br>"}]}}},{"tag":"div","presetName":"simpleText","property":{"innerHTML":"Description text","className":"","animationClass":"moveUpFadeIn"},"attribute":{"contenteditable":"true","rel":"none"},"style":{"fontFamily":"Alegreya Sans","fontWeight":"100","fontSize":"24","color":"rgba(245, 240, 240, 1)","paddingTop":"20","paddingBottom":"20","paddingLeft":"20","paddingRight":"20","textAlign":"left","borderBottomWidth":"0","borderTopWidth":"0","borderLeftWidth":"0","borderRightWidth":"0","marginTop":"0","marginBottom":"0","marginLeft":"0","marginRight":"0"},"event":{},"value":"<div style=\"font-family: unset; font-size: unset;\">Create multi page presentation</div><div style=\"font-family: unset; font-size: unset;\">Animated sliding</div><div style=\"font-family: unset; font-size: unset;\">User intraction and input control</div><div style=\"font-family: unset; font-size: unset;\">Easy to user and unlimited scope of designing&nbsp;</div>","content":{"name":"div","widgetController":{"list":[{"innerHTML":"<div style=\"font-family: unset; font-size: unset;\">Create multi page presentation</div><div style=\"font-family: unset; font-size: unset;\">Animated sliding</div><div style=\"font-family: unset; font-size: unset;\">User intraction and input control</div><div style=\"font-family: unset; font-size: unset;\">Easy to user and unlimited scope of designing&nbsp;</div>"}]}}}]}]});
+                
+                player.run();
+                //player.loadFile("intro.json");
+                //console.info(window.opener.editor);
+            });
+        </script>
+    </body>
+</html>
